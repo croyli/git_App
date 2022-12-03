@@ -8,9 +8,8 @@ const InputGitRepositiry = (props) => {
     setValue(newValue)
     props.onChange(newValue)
   }
-  return <input type="text" value={value} onChange={onChange} />
+  return <input id="#input-field" type="text" value={value} onChange={onChange} />
 }
-
 
 const LinkToUserGit = () => {
   const [id, setId] = useState('')
@@ -21,9 +20,7 @@ const LinkToUserGit = () => {
     <div>
       <InputGitRepositiry onChange={onInputChange} />
       <div>
-        <Link
-          to={id}
-        >
+        <Link id="#search-button" to={id}>
           Go to repositories
         </Link>
       </div>

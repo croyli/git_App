@@ -3,8 +3,6 @@ import LinkToUserGit from './inputGitRepository'
 
 import Head from './head'
 
-
-
 const Main = () => (
   <div>
     <Head title="Main" />

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const Header = () => {
   const [toggled, toggle] = useState(false)
-
+  const { userName } = useParams()
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-400 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
+      <div id="#repository-name" className="flex items-center flex-shrink-0 text-white mr-6">
         <svg
           className="fill-current h-8 w-8 mr-2"
           width="54"
@@ -22,13 +22,14 @@ const Header = () => {
           className="font-semibold text-xl tracking-tight"
           onClick={() => toggle(!toggled)}
         >
-          Git_App
+          {userName}
         </button>
       </div>
       {toggled && (
         <div id="menu" className="block">
           <Link
-            to='/'
+            id="#go-back"
+            to="/"
             type="button"
             className="flex items-center px-3 py-2 border rounded text-gray-700 border-gray-700 hover:text-white hover:border-white"
           >

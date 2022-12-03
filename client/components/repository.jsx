@@ -12,14 +12,15 @@ const Repo = () => {
       .get(`https://raw.githubusercontent.com/${userName}/${RepositoryName}/master/README.md`)
       .then((it) => {
         setName(it.data)
-      }).catch((err) => {
-          console.log(err)
-          setName('No Readme.md')
+      })
+      .catch((err) => {
+        console.log(err)
+        setName('No Readme.md')
       })
     return () => {}
   }, [])
   return (
-    <div>
+    <div id="#description">
       <Head title="Readme.md" />
       <Header />
       {name}
