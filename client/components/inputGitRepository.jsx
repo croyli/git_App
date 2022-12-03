@@ -11,6 +11,7 @@ const InputGitRepositiry = (props) => {
   return <input type="text" value={value} onChange={onChange} />
 }
 
+
 const LinkToUserGit = () => {
   const [id, setId] = useState('')
   const onInputChange = (nmb) => {
@@ -18,9 +19,11 @@ const LinkToUserGit = () => {
   }
   return (
     <div>
-      <Link to={id}>go</Link>
-      {id}
       <InputGitRepositiry onChange={onInputChange} />
+      <div> {id} </div>
+      <div>
+        <Link to={id}>go</Link>
+      </div>
     </div>
   )
 }

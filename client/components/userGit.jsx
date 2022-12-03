@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Head from './head'
+import axios from 'axios'
+
+
 
 
 const UserGit = () => {
-  const { user } = useParams()
+    const { userName } = useParams()
+    const [nam, setName] = useState([])
+    useEffect(() => {
+      axios.get(`https://api.github.com/users/${userName}/repos`).then((it) => {
+         setName(it.data)
+      })
+      return () => {}
+    }, [])
   return (
-  <>
-    <Head title="Hello" />
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col justify-center bg-indigo-800 p-10 rounded-xl select-none">
-        <img alt="wave" src="images/logo-new-text.png" />
-        <span className="text-white text-right font-semibold">UserGit</span>
-        <div>
-          { user }
-        </div>
-      </div>
+    <div>
+      {nam.length} Publick Repositories
+      {nam.map(it => {
+        return <div key={nam.name}>{it.name}</div>
+      })}
     </div>
-  </>
   )
 }
 
