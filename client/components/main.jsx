@@ -11,7 +11,6 @@ const Main = () => (
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col justify-center bg-indigo-800 p-10 rounded-xl select-none">
         <LinkToUserGit />
-        <span className="text-white text-right font-semibold">Main</span>
       </div>
     </div>
   </div>

@@ -20,9 +20,12 @@ const LinkToUserGit = () => {
   return (
     <div>
       <InputGitRepositiry onChange={onInputChange} />
-      <div> {id} </div>
       <div>
-        <Link to={id}>go</Link>
+        <Link
+          to={id}
+        >
+          Go to repositories
+        </Link>
       </div>
     </div>
   )
