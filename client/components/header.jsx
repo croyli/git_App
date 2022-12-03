@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const Header = () => {
   const [toggled, toggle] = useState(false)
-  const { userName } = useParams()
+  const { userName, RepositoryName } = useParams()
   return (
     <nav className="flex items-center justify-between flex-wrap bg-gray-400 p-6">
       <div id="#repository-name" className="flex items-center flex-shrink-0 text-white mr-6">
@@ -22,7 +22,9 @@ const Header = () => {
           className="font-semibold text-xl tracking-tight"
           onClick={() => toggle(!toggled)}
         >
-          {userName}
+          <div>{userName}</div>
+          <div>{RepositoryName}</div>
+          <Link to={`/${userName}`}>Go to Repository List</Link>
         </button>
       </div>
       {toggled && (
