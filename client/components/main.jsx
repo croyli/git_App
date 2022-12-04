@@ -7,7 +7,7 @@ const Main = () => (
   <div>
     <Head title="Main" />
     <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col justify-center bg-indigo-800 p-10 rounded-xl select-none">
+      <div className="flex flex-col bg-indigo-800 p-20 rounded-xl select-none">
         <LinkToUserGit />
       </div>
     </div>
